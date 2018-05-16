@@ -1,0 +1,314 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{vntex}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage{caption,subcaption}
+\usepackage{pbox}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage[left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{epsfig}
+\usepackage{setspace}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\usepackage[makeroom]{cancel}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage{arydshln}
+\usepackage{tabularx} % in the preamble
+
+\setlength\dashlinedash{1.5pt}
+\setlength\dashlinegap{4.5pt}
+\setlength\arrayrulewidth{0.2pt}
+
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{listingsutf8}
+% Typesetting Listings
+\usepackage{xcolor}
+\usepackage{color}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{Darkgreen}{rgb}{0.1,0.6,0.1}
+
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{titlesec}
+
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+\usepackage{verbatim}
+\usepackage{tabularx}
+ 
+
+
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+ \begin{tabular}{rl}
+	\begin{tabular}{l}
+		\textbf{\bf \ttfamily Trường ĐH Bách Khoa TP. HCM -- Khoa Khoa học Máy tính}\\
+	\end{tabular} 	
+ \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+	\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Báo cáo Bài tập lớn số 1, môn Hệ Điều Hành}
+\fancyfoot[R]{\scriptsize \ttfamily Trang {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\everymath{\color{blue}}%make in-line maths symbols blue to read/check easily
+
+\sloppy
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+%space remove between caption, figure, and text
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\newenvironment{foobar}{\begin{lstlisting}}{\end{lstlisting}} 
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 2pt,color=blue] ($(current page.north west) + (2.7cm,-2.7cm)$) rectangle ($(current page.south east) + (-2.7cm,2.7cm)$);
+   \draw[line width = 1pt,color=green] ($(current page.north west) + (2.6cm,-2.6cm)$) rectangle ($(current page.south east) + (-2.6cm,2.6cm)$);
+\end{tikzpicture}
+\vspace{0cm}
+\begin{center}
+TRƯỜNG ĐẠI HỌC BÁCH KHOA TP HCM \\
+\textbf{KHOA KHOA HỌC MÁY TÍNH } \\
+- - - - - - - - - - - -
+\end{center}
+
+
+\vspace{1cm}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=3.6cm]{Images/hcmut.eps}
+\end{center}
+\end{figure}
+\vspace{1cm}
+
+
+
+\begin{center}
+\begin{tabular}{c}
+\multicolumn{1}{c}{\textbf{{\huge HỆ ĐIỀU HÀNH }}}\\
+~~\\
+\hline
+\\
+
+\multicolumn{1}{c}{\textbf{{\Large Báo cáo Bài tập lớn số 01}}}\\
+\\
+
+\textbf{{\Huge System Call}} \\
+\\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1.8cm}
+\begin{table}[h]
+\begin{tabular}{rrll}
+\hspace{5cm} & GVHD: & Phạm Kiên&  \\
+ & SV thực hiện: & Nguyễn Xuân Hiến &1652192
+\end{tabular}
+\end{table}
+\vspace{5cm}
+
+\begin{center}
+{\footnotesize Tp. Hồ Chí Minh, Tháng 03/2018}
+\end{center}
+\end{titlepage}
+
+\newpage
+	\section{Chuẩn bị}
+	\begin{itemize}
+	\item \textbf{Cài đặt các gói cho Ubuntu:}
+	\begin{verbatim}
+	$ sudo apt-get update
+	$ sudo apt-get install build-essential
+	$ sudo apt-get install kernel-package
+	\end{verbatim}
+	\textbf{Câu hỏi :}Tại sao chúng ta cần phải cài đặt kernel-package ? \\
+	\textbf{Trả lời :}Chúng ta cần cài đặt gói kernel-pacage, nó cung cấp khả năng tạo một ảnh hạt nhân Debian, nó cần thiết để xây dựng các gói Debian của hạt nhân Linux.
+	\item \textbf{Tải và giải nén Linux kernel:}
+	\begin{verbatim}
+	$ sudo mkdir ~/kernelbuild
+	$ cd ~/kernelbuild
+	$ wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.56.tar.xz
+	$ tar -xvJf linux-4.4.56.tar.xz
+	\end{verbatim}
+	\textbf{Câu hỏi: }Tại sao chúng ta sử dụng một nguồn kernel khác thay vì sử dụng hạt nhân gốc ? \\
+	\textbf{Trả lời: }Bởi vì ta không thể biên dịch một kernel trực tiếp từ chính nó, mà chỉ có thể biên dịch một phiên bản kernel tương tự với bản hiện tại.
+	\end{itemize}
+	\section{Cấu hình hệ thống và thêm lời gọi hệ thống mới}
+	\begin{itemize}
+	\item \textbf{Đổi tên phiên bản kernel}
+	\begin{verbatim}
+	$ cp /boot/config-x.x.x-x-generic ~/kernelbuild/linux-4.4.56/.config
+	\end{verbatim}
+	Trong đó x.x.x-x-generic là phiên bản hạt nhân gốc trên máy ảo của bản. Sử dụng uname -r để kiểm tra phiên bản kernel gốc trên máy của bạn.
+	\begin{verbatim}
+	Đổi tên Linux kernel của bạn:
+	$ sudo apt-get install libncurses5-dev
+	$ cd ~/kernelbuild/linux-4.4.56
+	$ make nconfig // or make menuconfig
+	\end{verbatim}
+	Chọn General setup ---> local version --> Nhập .1652192 --> Nhấn F6 đề lưu và F9 để thoát.
+	\begin{verbatim}
+	Cài đặt gói openssl:
+	$ sudo apt-get install openssl libssl-dev
+	\end{verbatim}
+	\item \textbf{Thêm lời gọi hệ thống mới} \\
+	Đi đến thư mục arch/x86/entry/syscalls chứa danh sách các cuộc gọi hệ thống. \\
+	Vì ubuntu được cài là phiên bản x86 64-bit nên cần thêm cuộc gọi vào file syscall\_64.tbl \\
+	Thêm dòng:
+	\begin{verbatim}
+	[number] x32 procmem sys_procmem
+	\end{verbatim}
+	\textbf{Câu hỏi :}Ý nghĩa của các phần tử trong dòng trên là gì? \\
+	\textbf{Trả lời :}	
+	\begin{itemize}
+	\item number là số thứ tự cuộc gọi trong danh sách. Trong trường hợp này bằng cuối cùng trong danh sách cộng với 1
+	\item x32 là abi\footnote{\url{https://en.wikipedia.org/wiki/Application_binary_interface}} của hệ thống
+	\item procmem là tên của cuộc gọi hệ thống
+	\item sys\_procmem là một điểm truy nhập (entry point)\footnote{\url{https://en.wikipedia.org/wiki/Entry_point}}.
+	\end{itemize}
+	Đi đến include/linux/ và thêm vào cuối file syscall.h \\
+	Thêm dòng: 
+	\begin{verbatim}
+	struct proc_segs;
+	asmlinkage long sys_procmem( int pid, struct proc_segs * info);
+	\end{verbatim}
+	\textbf{Câu hỏi :}Ý nghĩa của hai dòng trên là gì ? \\
+	\textbf{Trả lời :}
+	\begin{itemize}
+	\item dòng thứ nhất là lệnh khai báo cấu trúc tự định nghĩa proc\_segs.
+	\item dòng thứ hai khai báo một lời gọi hệ thống sys\_procmem nhận vào hai giá trị pid và con trỏ info.
+	\end{itemize}
+	\item \textbf{Hiện thực lời gọi hệ thống} \\
+	Đi đến thư mục arch/x86/kernel tạo mới file sys\_procmem.c chứa mã nguồn của cuộc gọi hệ thống. \\
+	Thêm dòng:
+	\begin{verbatim}
+	obj-y += sys_procmem.o # name of syscall object file
+	\end{verbatim}
+	vào cuối file Makefile trong thư mục arch/x86/kernel	
+	\end{itemize}
+	\section{Biên dịch và cài đặt hệ thống}
+	\begin{itemize}
+	\item \textbf{Biên dịch Linux kernel}
+	\begin{verbatim}
+	$ sudo make -j 4
+	$ sudo make -j 4 modules
+	\end{verbatim}
+	\textbf{Câu hỏi :}Ý nghĩa của hai lệnh trên ? \\
+	\textbf{Trả lời :}
+	\begin{itemize}
+	\item Lệnh make biên dịch và liên kết hạt nhân. Kết quả của lệnh này là tập tin nhị phân vmlinuz.
+	\item Lệnh make modules dùng để biên dịch các modules. Các module là các bộ phân của hạt nhân được nạp trực tiếp, khi nó cần thiết.
+	\end{itemize}
+	\item \textbf{Cài đăt Linux kernel}
+	\begin{verbatim}
+	$ sudo make -j 4 modules_install
+	$ sudo make -j 4 install
+	$ sudo reboot
+	\end{verbatim}
+	Trong lúc hệ thống mới khởi động nhấn nhanh nút esc trên bàn phím --> chọn Advanced options for Ubuntu --> chọn phiên bản kernel bạn mới cài đặt. Hoặc bạn có thể chạy lênh sudo update-grub.
+	Sau khi khởi động hệ thống mở terminal nhập:
+	\begin{verbatim}
+	$ uname -r
+	\end{verbatim}
+	Nếu phiên bản kernel có chứa mã số sinh viên của bạn thì bạn đã cài đặt thành công.
+	\item \textbf{Kiểm tra hệ thống} \\
+	Tạo mới một file text để kiểm tra hệ thống. \\
+	Trong đó number\_32 là số thứ tự của cuộc gọi đã thêm vào trong file syscall\_64.tbl. \\
+	\textbf{Câu hỏi :}Tại sao chương trình trên cho biết hệ thống có hoạt động hay không ?\\
+	\textbf{Trả lời :}Chương trình trên sẽ gọi lời gọi hệ thống đã thêm vào và gọi hàm này được hiện thực trong file sys\_procmem.c nên nó kiểm tra xem hệ thống có hoạt động hay không.
+	\end{itemize}
+	\section{Tạo API cho lời gọi hệ thống}
+	\begin{itemize}
+	\item \textbf{Tạo file procmem.h và procmem.c trong thư mục a}
+	\begin{verbatim}
+	$ mkdir ~/Desktop/a
+	$ cd ~/Desktop/a
+	\end{verbatim}
+	Tạo file  procmem.h và procmem.c trong thư mục a. \\
+	\textbf{Câu hỏi: }Tại sao phải định nghĩa lại cấu trúc proc\_segs ? \\
+	\textbf{Trả lời:} Cần định nghĩa lại cấu trúc proc\_segs bới vì chương trình trên không sử dụng mã nguồn hạt nhân.\\
+	Trong đó number\_32 là số thứ tự của cuộc gọi đã thêm vào trong file syscall\_64.tbl.
+	\item \textbf{Dịch và chạy chương trình}
+	\begin{verbatim}
+	$ sudo cp ~/Desktop/a/procmem.h /usr/include
+	$ gcc -share -fpic procmem.c -o libprocmem.so
+	$ sudo cp ~/Desktop/a/libprocmem.so /usr/lib
+	\end{verbatim}
+	\textbf{Câu hỏi: }Tại sao cần thêm sudo trước lênh cp ?	\\
+	\textbf{Trả lời: }Bời vì thư mục /usr/include thuộc quyền sở hữu của root. \\
+	\textbf{Câu hỏi: }Tại sao cần đặt -share -fpic vào lênh gcc ? \\
+	\textbf{Trả lời: }Mã này được tích hợp vào các thư viện chia sẻ cho phép tạo ra mã vị trí độc lập, để thư viện chia có thể dễ dàng nạp vào bất kỳ địa chỉ nào trong bộ nhớ. \\
+	Tạo file source code trong thư mục a. \\
+	Biên dịch và chạy source code trên với tùy chọn -lprocmem.
+	\end{itemize}
+\end{document}
